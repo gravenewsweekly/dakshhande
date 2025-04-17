@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daksh Hande - Air India Express Services</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#home" class="logo">dakshhande.site</a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#attendance" id="attendance-nav" style="display:none;">Attendance</a>
+                <a href="#weekoff" id="weekoff-nav" style="display:none;">Week Off</a>
+                <a href="#contact">Contact</a>
+                <a href="#terms">Terms</a>
+                <a href="#privacy">Privacy</a>
+            </div>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <div class="container">
+            <h1 class="title">Professional Ground Services</h1>
+            <p class="subtitle">For Air India Express passengers</p>
+            <div class="scrolling-text">
+                <p>Premium Assistance • Punctual Service • Passenger Satisfaction Guaranteed</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Our Services</h2>
+            <div class="about-content">
+                <p>With over 5 years of dedicated service in the aviation industry, we specialize in providing exceptional ground handling services exclusively for Air India Express passengers. Our team of certified professionals ensures seamless travel experiences from check-in to boarding.</p>
+                
+                <div class="service-highlights">
+                    <div class="service-card">
+                        <i class="fas fa-plane-departure"></i>
+                        <h3>Boarding Assistance</h3>
+                        <p>Personalized help during the boarding process to ensure timely and stress-free aircraft entry.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-suitcase-rolling"></i>
+                        <h3>Check-In Support</h3>
+                        <p>Expert guidance through check-in procedures and baggage handling.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Special Assistance</h3>
+                        <p>Dedicated support for elderly passengers, unaccompanied minors, and passengers with reduced mobility.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="section">
+        <div class="container">
+            <h2>Passenger Feedback</h2>
+            <form id="review-form" class="review-form">
+                <div class="form-group">
+                    <label for="passenger-name">Full Name*</label>
+                    <input type="text" id="passenger-name" required>
+                </div>
+                <div class="form-group">
+                    <label>Airline*</label>
+                    <input type="text" value="Air India Express" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="passenger-age">Age*</label>
+                    <input type="number" id="passenger-age" min="1" max="120" required>
+                </div>
+                <div class="form-group">
+                    <label for="pnr">PNR Number*</label>
+                    <input type="text" id="pnr" pattern="[A-Za-z0-9]{6}" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number*</label>
+                    <input type="tel" id="phone" pattern="[0-9]{10}" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">Service Received*</label>
+                    <select id="service" required>
+                        <option value="">Select Service</option>
+                        <option value="Boarding">Boarding</option>
+                        <option value="L4">L4</option>
+                        <option value="Flooring">Flooring</option>
+                        <option value="Arrival">Arrival</option>
+                        <option value="Check In">Check In</option>
+                        <option value="International L4">International L4</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="feedback">Your Feedback*</label>
+                    <textarea id="feedback" rows="4" required></textarea>
+                </div>
+                <div class="form-group tip-group">
+                    <button type="button" id="tip-btn" class="tip-btn">Add Tip ₹15</button>
+                    <span id="tip-status"></span>
+                </div>
+                <button type="submit" class="submit-btn">Submit Feedback</button>
+            </form>
+            
+            <div id="reviews-container" class="reviews-container">
+                <!-- Reviews will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Attendance Section (Admin Only) -->
+    <section id="attendance" class="section">
+        <div class="container">
+            <h2>Attendance Record</h2>
+            <div id="attendance-form" class="attendance-form">
+                <div class="attendance-actions">
+                    <button id="present-btn" class="present-btn">Present</button>
+                    <button id="absent-btn" class="absent-btn">Absent</button>
+                </div>
+                <div id="attendance-records" class="attendance-records">
+                    <!-- Attendance records will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Week Off Section (Admin Only) -->
+    <section id="weekoff" class="section">
+        <div class="container">
+            <h2>Week Off Management</h2>
+            <div id="weekoff-form" class="weekoff-form">
+                <div class="form-group">
+                    <label>Week Off Type</label>
+                    <select id="weekoff-type">
+                        <option value="Self">Self</option>
+                        <option value="Company">Company</option>
+                    </select>
+                </div>
+                <button id="submit-weekoff" class="submit-btn">Submit Week Off</button>
+                <div id="weekoff-records" class="weekoff-records">
+                    <!-- Week off records will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form id="contact-form" action="https://formspree.io/f/mjkyqvpy" method="POST">
+                <div class="form-group">
+                    <label for="contact-name">Name</label>
+                    <input type="text" id="contact-name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">Email</label>
+                    <input type="email" id="contact-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-message">Message</label>
+                    <textarea id="contact-message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Terms Section -->
+    <section id="terms" class="section">
+        <div class="container">
+            <h2>Terms of Service</h2>
+            <div class="terms-content">
+                <h3>Service Agreement</h3>
+                <p>By using our services, you agree to comply with all airport regulations and security protocols. Our staff will assist you within the bounds of airport authority rules and regulations.</p>
+                
+                <h3>Limitations</h3>
+                <p>We are not responsible for flight delays, cancellations, or baggage issues beyond our control. Our services are limited to ground assistance only.</p>
+                
+                <h3>Data Privacy</h3>
+                <p>All passenger information collected is used solely for service improvement and will not be shared with third parties without consent.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Section -->
+    <section id="privacy" class="section">
+        <div class="container">
+            <h2>Privacy Policy</h2>
+            <div class="privacy-content">
+                <h3>Information Collection</h3>
+                <p>We collect passenger names, PNR details, and contact information solely for service provision and quality improvement purposes.</p>
+                
+                <h3>Data Security</h3>
+                <p>All data is encrypted and stored securely with access limited to authorized personnel only. We implement industry-standard security measures to protect your information.</p>
+                
+                <h3>Information Usage</h3>
+                <p>Collected data may be used for service analytics, training purposes, and to enhance passenger experience. We do not sell or share personal data with marketing agencies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> dakshhande.site. All rights reserved.</p>
+            <p>Certified Ground Handling Services for Air India Express</p>
+        </div>
+    </footer>
+
+    <!-- Razorpay Payment Script -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

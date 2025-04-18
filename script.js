@@ -1,5 +1,5 @@
 // Security Configuration
-const ALLOWED_IP = '106.222.216.143';
+const ALLOWED_IP = '106.222.214.48';
 const JSONBIN_API_KEY = '$2a$10$9/8J2F316xoHT9/MJRWScOG86NQgSqHw8CsPltGnTICDQixD77Tpa';
 const JSONBIN_BIN_ID = '680141e98a456b79668bab18';
 const RAZORPAY_KEY = 'rzp_live_Apno0aW38JljQW';
